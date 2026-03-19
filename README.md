@@ -35,3 +35,4 @@ This project is not affiliated with Roblox Corporation.
 
 ## 📜 License
 MIT
+<img width="1024" height="513" alt="image" src="https://github.com/user-attachments/assets/3066c944-3208-480e-81d1-2ad910fc4ed2" />
