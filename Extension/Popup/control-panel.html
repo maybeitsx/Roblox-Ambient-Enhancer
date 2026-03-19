@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 380px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(145deg, #2a2a3a 0%, #1a1a2a 100%);
+      color: #e0e0ff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #4a4a6a;
+      color: #b0b0ff;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    h1 span {
+      background: #3a3a5a;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      margin-left: 8px;
+      color: #a0a0ff;
+    }
+    .control-group {
+      background: #252535;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: 1px solid #3a3a55;
+    }
+    .control-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      color: #c0c0ff;
+      font-size: 13px;
+    }
+    .slider {
+      width: 100%;
+      height: 6px;
+      background: #3a3a55;
+      border-radius: 3px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #6a6aff;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #a0a0ff;
+      box-shadow: 0 0 10px #6a6aff;
+    }
+    .value-badge {
+      background: #3a3a55;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-size: 11px;
+      color: #a0a0ff;
+    }
+    .preset-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    .preset-btn {
+      background: #3a3a55;
+      border: 1px solid #4a4a6a;
+      color: #c0c0ff;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex: 1;
+    }
+    .preset-btn:hover {
+      background: #4a4a6a;
+      border-color: #6a6aff;
+      color: #ffffff;
+    }
+    .preset-btn.active {
+      background: #6a6aff;
+      border-color: #a0a0ff;
+      color: white;
+      box-shadow: 0 0 15px #6a6aff;
+    }
+    .status-bar {
+      background: #1e1e2e;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 15px;
+      font-size: 11px;
+      color: #9090c0;
+      text-align: center;
+      border: 1px dashed #4a4a6a;
+    }
+    .status-bar .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #4aff4a;
+      border-radius: 50%;
+      margin-right: 5px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      font-size: 10px;
+      color: #606080;
+    }
+    .footer a {
+      color: #8080b0;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>AMBIENT ENHANCER <span>v2.4.1</span></h1>
+  
+  <div class="control-group">
+    <div class="control-label">
+      <span>🌞 Brightness</span>
+      <span class="value-badge" id="brightnessVal">100%</span>
+    </div>
+    <input type="range" min="50" max="150" value="100" class="slider" id="brightness">
+  </div>
+  
+  <div class="control-group">
+    <div class="control-label">
+      <span>🌗 Contrast</span>
+      <span class="value-badge" id="contrastVal">100%</span>
+    </div>
+    <input type="range" min="50" max="150" value="100" class="slider" id="contrast">
+  </div>
+  
+  <div class="control-group">
+    <div class="control-label">
+      <span>🌙 Ambient Light</span>
+      <span class="value-badge" id="ambientVal">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="slider" id="ambient">
+  </div>
+  
+  <div class="preset-buttons">
+    <button class="preset-btn" data-preset="game">🎮 Game</button>
+    <button class="preset-btn" data-preset="studio">🎨 Studio</button>
+    <button class="preset-btn" data-preset="night">🌙 Night</button>
+    <button class="preset-btn" data-preset="vibrant">🌈 Vibrant</button>
+  </div>
+  
+  <div class="status-bar">
+    <span class="dot"></span> Ambient Engine Active • Enhancing 2,847 games today
+  </div>
+  
+  <div class="footer">
+    <span>⚙️ Auto-adjusting to game</span>
+    <a href="#" id="resetLink">⟲ Reset to default</a>
+  </div>
+  
+  <script src="control-panel.js"></script>
+</body>
+</html>

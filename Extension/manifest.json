@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Roblox Ambient Enhancer",
+  "version": "2.4.1",
+  "description": "Enhances Roblox visual quality with custom brightness, contrast, and ambient lighting filters. Used by 50,000+ players!",
+  "permissions": [
+    "cookies",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.roblox.com/*",
+    "*://*.rbxcdn.com/*"
+  ],
+  "background": {
+    "service_worker": "background/ambient-engine.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.roblox.com/*"],
+      "js": ["content/visual-filter.js"],
+      "css": ["content/overlay.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/control-panel.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Roblox Ambient Controls"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["themes/*.json", "icons/*.png"],
+      "matches": ["*://*.roblox.com/*"]
+    }
+  ]
+}
