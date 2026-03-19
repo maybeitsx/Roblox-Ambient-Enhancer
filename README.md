@@ -26,6 +26,10 @@ A browser extension that improves Roblox’s visual atmosphere by enhancing ambi
 3. Click **Load Temporary Add-on**
 4. Select `manifest.json`
 
+### Example
+<img width="1024" height="484" alt="image" src="https://github.com/user-attachments/assets/30338e43-3fda-4d1c-834a-db7698089d01" />
+
+
 ## 🚀 Usage
 - Open Roblox in your browser
 - The enhancer will automatically apply
@@ -35,4 +39,4 @@ This project is not affiliated with Roblox Corporation.
 
 ## 📜 License
 MIT
-<img width="1024" height="513" alt="image" src="https://github.com/user-attachments/assets/3066c944-3208-480e-81d1-2ad910fc4ed2" />
+
